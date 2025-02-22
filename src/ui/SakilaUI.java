@@ -40,6 +40,7 @@ public class SakilaUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Filtro = new javax.swing.ButtonGroup();
         Painel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -54,6 +55,10 @@ public class SakilaUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         Executar = new javax.swing.JButton();
+        rbAtivo = new javax.swing.JRadioButton();
+        rbInativo = new javax.swing.JRadioButton();
+        jLabel3 = new javax.swing.JLabel();
+        rbAmbas = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -167,6 +172,18 @@ public class SakilaUI extends javax.swing.JFrame {
             }
         });
 
+        Filtro.add(rbAtivo);
+        rbAtivo.setText("Ativo");
+
+        Filtro.add(rbInativo);
+        rbInativo.setText("Inativo");
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setText("Filtrar por:");
+
+        Filtro.add(rbAmbas);
+        rbAmbas.setText("Ambas");
+
         javax.swing.GroupLayout PainelLayout = new javax.swing.GroupLayout(Painel);
         Painel.setLayout(PainelLayout);
         PainelLayout.setHorizontalGroup(
@@ -174,13 +191,23 @@ public class SakilaUI extends javax.swing.JFrame {
             .addGroup(PainelLayout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 946, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PainelLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 946, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PainelLayout.createSequentialGroup()
+                                .addComponent(rbAtivo, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(rbInativo, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(rbAmbas, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(PainelLayout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(358, 358, 358)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 752, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 244, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
                 .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelLayout.createSequentialGroup()
                         .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -236,7 +263,16 @@ public class SakilaUI extends javax.swing.JFrame {
                                 .addComponent(voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(PainelLayout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(rbAtivo)
+                                    .addComponent(rbInativo)
+                                    .addComponent(rbAmbas))))))
                 .addGap(4, 4, 4)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -288,129 +324,182 @@ public class SakilaUI extends javax.swing.JFrame {
 
     private void ExecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExecutarActionPerformed
         Object opcao = jComboBox1.getSelectedItem();
-    
-    if (opcao.equals("VIEW")) {
-        try {
-            List<Customer> lista = dao.getCustomers();
-            DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
-            dtm.setNumRows(0);
-            for (Customer customer : lista) {
-                dtm.addRow(new Object[]{
-                    customer.getCustomer_id(),
-                    customer.getStore_id(),
-                    customer.getFirst_name(),
-                    customer.getLast_name(),
-                    customer.getEmail(),
-                    customer.getAddress_id(),
-                    customer.getActive(),
-                    customer.getCreate_date(),
-                    customer.getLast_update()
-                });
+
+        if (opcao.equals("VIEW")) {
+            try {
+                List<Customer> lista = dao.getCustomers();
+                DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
+                dtm.setNumRows(0);
+                for (Customer customer : lista) {
+                    boolean adicionar = false;
+
+                    // Se o radio button "Ambas" estiver selecionado, adiciona todos os registros
+                    if (rbAmbas.isSelected()) {
+                        adicionar = true;
+                    } // Se "Ativo" estiver selecionado, adiciona somente se active == 1
+                    else if (rbAtivo.isSelected() && customer.getActive() == 1) {
+                        adicionar = true;
+                    } // Se "Inativo" estiver selecionado, adiciona somente se active == 0
+                    else if (rbInativo.isSelected() && customer.getActive() == 0) {
+                        adicionar = true;
+                    }
+
+                    if (adicionar) {
+                        dtm.addRow(new Object[]{
+                            customer.getCustomer_id(),
+                            customer.getStore_id(),
+                            customer.getFirst_name(),
+                            customer.getLast_name(),
+                            customer.getEmail(),
+                            customer.getAddress_id(),
+                            customer.getActive(),
+                            customer.getCreate_date(),
+                            customer.getLast_update()
+                        });
+                    }
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(SakilaUI.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } catch (SQLException ex) {
-            Logger.getLogger(SakilaUI.class.getName()).log(Level.SEVERE, null, ex);
+        } else if (opcao.equals("INSERT")) {
+            try {
+                // Coleta os dados via diálogos com validação dos campos
+                String storeIdStr = JOptionPane.showInputDialog("Informe o store_id:");
+                if (storeIdStr == null || storeIdStr.trim().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "O campo store_id é obrigatório.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                int store_id = Integer.parseInt(storeIdStr);
+
+                String firstName = JOptionPane.showInputDialog("Informe o first_name:");
+                if (firstName == null || firstName.trim().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "O campo first_name é obrigatório.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                String lastName = JOptionPane.showInputDialog("Informe o last_name:");
+                if (lastName == null || lastName.trim().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "O campo last_name é obrigatório.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                String email = JOptionPane.showInputDialog("Informe o email:");
+                if (email == null || email.trim().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "O campo email é obrigatório.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                String addressIdStr = JOptionPane.showInputDialog("Informe o address_id:");
+                if (addressIdStr == null || addressIdStr.trim().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "O campo address_id é obrigatório.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                int address_id = Integer.parseInt(addressIdStr);
+
+                String activeStr = JOptionPane.showInputDialog("Informe o active (0 ou 1):");
+                if (activeStr == null || activeStr.trim().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "O campo active é obrigatório.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                int active = Integer.parseInt(activeStr);
+
+                // Cria um novo objeto Customer (usa o construtor sem customer_id, create_date e last_update)
+                Customer newCustomer = new Customer(store_id, firstName, lastName, email, address_id, active);
+
+                // Chama o método insertCustomer da DAO
+                dao.insertCustomer(newCustomer);
+                JOptionPane.showMessageDialog(null, "Insert realizado com sucesso!");
+
+                // Atualiza a tabela
+                ExecutarActionPerformed(evt);
+            } catch (SQLException ex) {
+                Logger.getLogger(SakilaUI.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "Erro ao realizar insert: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Formato numérico inválido: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        } else if (opcao.equals("UPDATE")) {
+            int selectedRow = jTable1.getSelectedRow();
+            if (selectedRow == -1) {
+                JOptionPane.showMessageDialog(null, "Selecione um registro para atualizar!", "Erro", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            try {
+                String storeIdStr = JOptionPane.showInputDialog("Informe o novo store_id:");
+                if (storeIdStr == null || storeIdStr.trim().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "O campo store_id é obrigatório.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                int newStoreId = Integer.parseInt(storeIdStr);
+
+                String firstName = JOptionPane.showInputDialog("Informe o novo first_name:");
+                if (firstName == null || firstName.trim().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "O campo first_name é obrigatório.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                String lastName = JOptionPane.showInputDialog("Informe o novo last_name:");
+                if (lastName == null || lastName.trim().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "O campo last_name é obrigatório.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                String email = JOptionPane.showInputDialog("Informe o novo email:");
+                if (email == null || email.trim().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "O campo email é obrigatório.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+
+                String addressIdStr = JOptionPane.showInputDialog("Informe o novo address_id:");
+                if (addressIdStr == null || addressIdStr.trim().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "O campo address_id é obrigatório.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                int newAddressId = Integer.parseInt(addressIdStr);
+
+                String activeStr = JOptionPane.showInputDialog("Informe o novo active (0 ou 1):");
+                if (activeStr == null || activeStr.trim().isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "O campo active é obrigatório.", "Erro", JOptionPane.ERROR_MESSAGE);
+                    return;
+                }
+                int newActive = Integer.parseInt(activeStr);
+
+                int customerId = (Integer) jTable1.getValueAt(selectedRow, 0);
+
+                // Cria um objeto Customer com os dados atualizados
+                Customer updatedCustomer = new Customer(customerId, newStoreId, firstName, lastName, email, newAddressId, newActive, null, null);
+
+                // Chama o método updateCustomer da DAO
+                dao.updateCustomer(updatedCustomer);
+                JOptionPane.showMessageDialog(null, "Registro atualizado com sucesso!");
+
+                // Atualiza a tabela
+                ExecutarActionPerformed(evt);
+            } catch (SQLException ex) {
+                Logger.getLogger(SakilaUI.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "Erro ao atualizar o registro: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Formato numérico inválido: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+            }
+        } else if (opcao.equals("DELETE")) {
+            int selectedRow = jTable1.getSelectedRow();
+            if (selectedRow == -1) {
+                JOptionPane.showMessageDialog(null, "Selecione um registro para deletar!", "Erro", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            int confirm = JOptionPane.showConfirmDialog(null, "Deseja deletar o registro?", "Confirmação", JOptionPane.YES_NO_OPTION);
+            if (confirm != JOptionPane.YES_OPTION) {
+                return;
+            }
+            try {
+                int customerId = (Integer) jTable1.getValueAt(selectedRow, 0);
+                dao.deleteCustomer(customerId);
+                JOptionPane.showMessageDialog(null, "Registro deletado com sucesso!");
+
+                // Atualiza a tabela
+                ExecutarActionPerformed(evt);
+            } catch (SQLException ex) {
+                Logger.getLogger(SakilaUI.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null, "Erro ao deletar o registro: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+            }
         }
-        
-    } else if (opcao.equals("INSERT")) {
-        try {
-            // Coleta os dados via diálogos
-            String storeIdStr = JOptionPane.showInputDialog("Informe o store_id:");
-            if (storeIdStr == null) return;
-            int store_id = Integer.parseInt(storeIdStr);
 
-            String firstName = JOptionPane.showInputDialog("Informe o first_name:");
-            if (firstName == null) return;
-            String lastName = JOptionPane.showInputDialog("Informe o last_name:");
-            if (lastName == null) return;
-            String email = JOptionPane.showInputDialog("Informe o email:");
-            if (email == null) return;
-
-            String addressIdStr = JOptionPane.showInputDialog("Informe o address_id:");
-            if (addressIdStr == null) return;
-            int address_id = Integer.parseInt(addressIdStr);
-
-            String activeStr = JOptionPane.showInputDialog("Informe o active (0 ou 1):");
-            if (activeStr == null) return;
-            int active = Integer.parseInt(activeStr);
-
-            // Cria um novo objeto Customer (usa o construtor sem customer_id, create_date e last_update)
-            Customer newCustomer = new Customer(store_id, firstName, lastName, email, address_id, active);
-
-            // Chama o método insertCustomer da DAO
-            dao.insertCustomer(newCustomer);
-            JOptionPane.showMessageDialog(null, "Insert realizado com sucesso!");
-
-            // Atualiza a tabela
-            ExecutarActionPerformed(evt);
-        } catch (SQLException ex) {
-            Logger.getLogger(SakilaUI.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "Erro ao realizar insert: " + ex.getMessage());
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(null, "Formato numérico inválido: " + ex.getMessage());
-        }
-        
-    } else if (opcao.equals("UPDATE")) {
-        int selectedRow = jTable1.getSelectedRow();
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(null, "Selecione um registro para atualizar!");
-            return;
-        }
-        try {
-            String storeIdStr = JOptionPane.showInputDialog("Informe o novo store_id:");
-            if (storeIdStr == null) return;
-            int newStoreId = Integer.parseInt(storeIdStr);
-
-            String firstName = JOptionPane.showInputDialog("Informe o novo first_name:");
-            if (firstName == null) return;
-            String lastName = JOptionPane.showInputDialog("Informe o novo last_name:");
-            if (lastName == null) return;
-            String email = JOptionPane.showInputDialog("Informe o novo email:");
-            if (email == null) return;
-
-            String addressIdStr = JOptionPane.showInputDialog("Informe o novo address_id:");
-            if (addressIdStr == null) return;
-            int newAddressId = Integer.parseInt(addressIdStr);
-
-            String activeStr = JOptionPane.showInputDialog("Informe o novo active (0 ou 1):");
-            if (activeStr == null) return;
-            int newActive = Integer.parseInt(activeStr);
-
-            int customerId = (Integer) jTable1.getValueAt(selectedRow, 0);
-
-            // Cria um objeto Customer com os dados atualizados
-            Customer updatedCustomer = new Customer(customerId, newStoreId, firstName, lastName, email, newAddressId, newActive, null, null);
-
-            // Chama o método updateCustomer da DAO
-            dao.updateCustomer(updatedCustomer);
-            JOptionPane.showMessageDialog(null, "Registro atualizado com sucesso!");
-
-            // Atualiza a tabela
-            ExecutarActionPerformed(evt);
-        } catch (SQLException ex) {
-            Logger.getLogger(SakilaUI.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "Erro ao atualizar o registro: " + ex.getMessage());
-        } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(null, "Formato numérico inválido: " + ex.getMessage());
-        }
-        
-    } else if (opcao.equals("DELETE")) {
-        int selectedRow = jTable1.getSelectedRow();
-        if (selectedRow == -1) {
-            JOptionPane.showMessageDialog(null, "Selecione um registro para deletar!");
-            return;
-        }
-        int confirm = JOptionPane.showConfirmDialog(null, "Deseja deletar o registro?", "Confirmação", JOptionPane.YES_NO_OPTION);
-        if (confirm != JOptionPane.YES_OPTION) return;
-        try {
-            int customerId = (Integer) jTable1.getValueAt(selectedRow, 0);
-            dao.deleteCustomer(customerId);
-            JOptionPane.showMessageDialog(null, "Registro deletado com sucesso!");
-            ExecutarActionPerformed(evt);
-        } catch (SQLException ex) {
-            Logger.getLogger(SakilaUI.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, "Erro ao deletar o registro: " + ex.getMessage());
-        }
-    }
     }//GEN-LAST:event_ExecutarActionPerformed
 
     public void RGB() {
@@ -458,10 +547,12 @@ public class SakilaUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Executar;
+    private javax.swing.ButtonGroup Filtro;
     private javax.swing.JPanel Painel;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSlider jSlider1;
     private javax.swing.JSlider jSlider4;
@@ -470,6 +561,9 @@ public class SakilaUI extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
+    private javax.swing.JRadioButton rbAmbas;
+    private javax.swing.JRadioButton rbAtivo;
+    private javax.swing.JRadioButton rbInativo;
     private javax.swing.JButton voltar;
     // End of variables declaration//GEN-END:variables
 }
