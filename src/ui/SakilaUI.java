@@ -59,6 +59,8 @@ public class SakilaUI extends javax.swing.JFrame {
         rbInativo = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
         rbAmbas = new javax.swing.JRadioButton();
+        cbDetalhado = new javax.swing.JCheckBox();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -184,57 +186,63 @@ public class SakilaUI extends javax.swing.JFrame {
         Filtro.add(rbAmbas);
         rbAmbas.setText("Ambas");
 
+        cbDetalhado.setText("Tabela detalhada");
+
+        jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout PainelLayout = new javax.swing.GroupLayout(Painel);
         Painel.setLayout(PainelLayout);
         PainelLayout.setHorizontalGroup(
             PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PainelLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(PainelLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 946, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PainelLayout.createSequentialGroup()
-                                .addComponent(rbAtivo, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(rbInativo, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(rbAmbas, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(PainelLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
+                        .addGap(29, 29, 29)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 946, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PainelLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
                         .addComponent(voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(358, 358, 358)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 752, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
+                        .addGap(265, 265, 265)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 556, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(38, 38, 38)
                 .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelLayout.createSequentialGroup()
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PainelLayout.createSequentialGroup()
                         .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jSlider5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSlider4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(11, 11, 11))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelLayout.createSequentialGroup()
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(99, 99, 99))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelLayout.createSequentialGroup()
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(100, 100, 100))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelLayout.createSequentialGroup()
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(98, 98, 98))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(16, 16, 16))))
+                            .addComponent(jSlider4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(PainelLayout.createSequentialGroup()
+                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(88, 88, 88))
+                            .addGroup(PainelLayout.createSequentialGroup()
+                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(89, 89, 89))
+                            .addGroup(PainelLayout.createSequentialGroup()
+                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(87, 87, 87))
+                            .addGroup(PainelLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(5, 5, 5))
+                            .addGroup(PainelLayout.createSequentialGroup()
+                                .addComponent(rbAtivo, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(rbInativo, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(rbAmbas, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jSeparator1)
             .addGroup(PainelLayout.createSequentialGroup()
                 .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PainelLayout.createSequentialGroup()
-                        .addGap(344, 344, 344)
-                        .addComponent(Executar))
-                    .addGroup(PainelLayout.createSequentialGroup()
                         .addGap(376, 376, 376)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addComponent(cbDetalhado))
+                    .addGroup(PainelLayout.createSequentialGroup()
+                        .addGap(338, 338, 338)
+                        .addComponent(Executar)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         PainelLayout.setVerticalGroup(
@@ -242,7 +250,26 @@ public class SakilaUI extends javax.swing.JFrame {
             .addGroup(PainelLayout.createSequentialGroup()
                 .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PainelLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
+                        .addGap(14, 14, 14)
+                        .addComponent(voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(22, 22, 22))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PainelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PainelLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel3)
+                        .addGap(18, 18, 18)
+                        .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(rbAtivo)
+                            .addComponent(rbInativo)
+                            .addComponent(rbAmbas))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
                         .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -255,28 +282,14 @@ public class SakilaUI extends javax.swing.JFrame {
                         .addGap(12, 12, 12)
                         .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jSlider5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(PainelLayout.createSequentialGroup()
-                        .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(PainelLayout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(voltar, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(PainelLayout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
-                                .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(rbAtivo)
-                                    .addComponent(rbInativo)
-                                    .addComponent(rbAmbas))))))
+                        .addComponent(jSlider5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(4, 4, 4)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Executar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbDetalhado))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(Executar)
+                .addContainerGap())
         );
 
         jTextField2.setText(jSlider1.getValue()+"");
@@ -325,45 +338,27 @@ public class SakilaUI extends javax.swing.JFrame {
     private void ExecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExecutarActionPerformed
         Object opcao = jComboBox1.getSelectedItem();
 
+        if (!opcao.equals("VIEW") && jTable1.getRowCount() == 0) {
+            JOptionPane.showMessageDialog(null,
+                    "A tabela não está carregada. Por favor, clique em VIEW primeiro.",
+                    "Erro",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
         if (opcao.equals("VIEW")) {
-            try {
-                List<Customer> lista = dao.getCustomers();
-                DefaultTableModel dtm = (DefaultTableModel) jTable1.getModel();
-                dtm.setNumRows(0);
-                for (Customer customer : lista) {
-                    boolean adicionar = false;
-
-                    // Se o radio button "Ambas" estiver selecionado, adiciona todos os registros
-                    if (rbAmbas.isSelected()) {
-                        adicionar = true;
-                    } // Se "Ativo" estiver selecionado, adiciona somente se active == 1
-                    else if (rbAtivo.isSelected() && customer.getActive() == 1) {
-                        adicionar = true;
-                    } // Se "Inativo" estiver selecionado, adiciona somente se active == 0
-                    else if (rbInativo.isSelected() && customer.getActive() == 0) {
-                        adicionar = true;
-                    }
-
-                    if (adicionar) {
-                        dtm.addRow(new Object[]{
-                            customer.getCustomer_id(),
-                            customer.getStore_id(),
-                            customer.getFirst_name(),
-                            customer.getLast_name(),
-                            customer.getEmail(),
-                            customer.getAddress_id(),
-                            customer.getActive(),
-                            customer.getCreate_date(),
-                            customer.getLast_update()
-                        });
-                    }
-                }
-            } catch (SQLException ex) {
-                Logger.getLogger(SakilaUI.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            VIEW();
         } else if (opcao.equals("INSERT")) {
+
+            if (jTable1.getRowCount() == 0) {
+                JOptionPane.showMessageDialog(null,
+                        "A tabela não está carregada. Por favor, clique em VIEW primeiro.",
+                        "Erro",
+                        JOptionPane.ERROR_MESSAGE);
+                return;
+            }
             try {
-                // Coleta os dados via diálogos com validação dos campos
+
                 String storeIdStr = JOptionPane.showInputDialog("Informe o store_id:");
                 if (storeIdStr == null || storeIdStr.trim().isEmpty()) {
                     JOptionPane.showMessageDialog(null, "O campo store_id é obrigatório.", "Erro", JOptionPane.ERROR_MESSAGE);
@@ -401,15 +396,12 @@ public class SakilaUI extends javax.swing.JFrame {
                 }
                 int active = Integer.parseInt(activeStr);
 
-                // Cria um novo objeto Customer (usa o construtor sem customer_id, create_date e last_update)
                 Customer newCustomer = new Customer(store_id, firstName, lastName, email, address_id, active);
 
-                // Chama o método insertCustomer da DAO
                 dao.insertCustomer(newCustomer);
                 JOptionPane.showMessageDialog(null, "Insert realizado com sucesso!");
 
-                // Atualiza a tabela
-                ExecutarActionPerformed(evt);
+                VIEW();
             } catch (SQLException ex) {
                 Logger.getLogger(SakilaUI.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, "Erro ao realizar insert: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
@@ -417,6 +409,14 @@ public class SakilaUI extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Formato numérico inválido: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
             }
         } else if (opcao.equals("UPDATE")) {
+
+            if (jTable1.getRowCount() == 0) {
+                JOptionPane.showMessageDialog(null,
+                        "A tabela não está carregada. Por favor, clique em VIEW primeiro.",
+                        "Erro",
+                        JOptionPane.ERROR_MESSAGE);
+                return;
+            }
             int selectedRow = jTable1.getSelectedRow();
             if (selectedRow == -1) {
                 JOptionPane.showMessageDialog(null, "Selecione um registro para atualizar!", "Erro", JOptionPane.ERROR_MESSAGE);
@@ -462,15 +462,12 @@ public class SakilaUI extends javax.swing.JFrame {
 
                 int customerId = (Integer) jTable1.getValueAt(selectedRow, 0);
 
-                // Cria um objeto Customer com os dados atualizados
                 Customer updatedCustomer = new Customer(customerId, newStoreId, firstName, lastName, email, newAddressId, newActive, null, null);
 
-                // Chama o método updateCustomer da DAO
                 dao.updateCustomer(updatedCustomer);
                 JOptionPane.showMessageDialog(null, "Registro atualizado com sucesso!");
 
-                // Atualiza a tabela
-                ExecutarActionPerformed(evt);
+                VIEW();
             } catch (SQLException ex) {
                 Logger.getLogger(SakilaUI.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, "Erro ao atualizar o registro: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
@@ -478,6 +475,14 @@ public class SakilaUI extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Formato numérico inválido: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
             }
         } else if (opcao.equals("DELETE")) {
+
+            if (jTable1.getRowCount() == 0) {
+                JOptionPane.showMessageDialog(null,
+                        "A tabela não está carregada. Por favor, clique em VIEW primeiro.",
+                        "Erro",
+                        JOptionPane.ERROR_MESSAGE);
+                return;
+            }
             int selectedRow = jTable1.getSelectedRow();
             if (selectedRow == -1) {
                 JOptionPane.showMessageDialog(null, "Selecione um registro para deletar!", "Erro", JOptionPane.ERROR_MESSAGE);
@@ -491,9 +496,7 @@ public class SakilaUI extends javax.swing.JFrame {
                 int customerId = (Integer) jTable1.getValueAt(selectedRow, 0);
                 dao.deleteCustomer(customerId);
                 JOptionPane.showMessageDialog(null, "Registro deletado com sucesso!");
-
-                // Atualiza a tabela
-                ExecutarActionPerformed(evt);
+                VIEW();
             } catch (SQLException ex) {
                 Logger.getLogger(SakilaUI.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(null, "Erro ao deletar o registro: " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
@@ -504,6 +507,85 @@ public class SakilaUI extends javax.swing.JFrame {
 
     public void RGB() {
         Painel.setBackground(new Color(jSlider4.getValue(), jSlider1.getValue(), jSlider5.getValue()));
+    }
+
+    public void VIEW() {
+        if (!rbAtivo.isSelected() && !rbInativo.isSelected() && !rbAmbas.isSelected()) {
+            JOptionPane.showMessageDialog(null,
+                    "Por favor, selecione um status: Ativo, Inativo ou Ambas.",
+                    "Erro",
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        try {
+
+            DefaultTableModel dtm;
+            if (cbDetalhado.isSelected()) {
+                dtm = new DefaultTableModel(
+                        new Object[][]{},
+                        new String[]{"customer_id", "store_id", "first_name", "last_name", "email", "address_id", "active", "create_date", "last_update"}
+                ) {
+                    @Override
+                    public boolean isCellEditable(int row, int column) {
+                        return false;
+                    }
+                };
+            } else {
+                dtm = new DefaultTableModel(
+                        new Object[][]{},
+                        new String[]{"customer_id", "store_id", "first_name", "last_name", "email", "address_id", "active"}
+                ) {
+                    @Override
+                    public boolean isCellEditable(int row, int column) {
+                        return false;
+                    }
+                };
+            }
+
+            jTable1.setModel(dtm);
+
+            List<Customer> lista = dao.getCustomers();
+
+            for (Customer customer : lista) {
+                boolean adicionar = false;
+                if (rbAmbas.isSelected()) {
+                    adicionar = true;
+                } else if (rbAtivo.isSelected() && customer.getActive() == 1) {
+                    adicionar = true;
+                } else if (rbInativo.isSelected() && customer.getActive() == 0) {
+                    adicionar = true;
+                }
+
+                if (adicionar) {
+                    if (cbDetalhado.isSelected()) {
+                        dtm.addRow(new Object[]{
+                            customer.getCustomer_id(),
+                            customer.getStore_id(),
+                            customer.getFirst_name(),
+                            customer.getLast_name(),
+                            customer.getEmail(),
+                            customer.getAddress_id(),
+                            customer.getActive(),
+                            customer.getCreate_date(),
+                            customer.getLast_update()
+                        });
+                    } else {
+                        dtm.addRow(new Object[]{
+                            customer.getCustomer_id(),
+                            customer.getStore_id(),
+                            customer.getFirst_name(),
+                            customer.getLast_name(),
+                            customer.getEmail(),
+                            customer.getAddress_id(),
+                            customer.getActive()
+                        });
+                    }
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SakilaUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -549,11 +631,13 @@ public class SakilaUI extends javax.swing.JFrame {
     private javax.swing.JButton Executar;
     private javax.swing.ButtonGroup Filtro;
     private javax.swing.JPanel Painel;
+    private javax.swing.JCheckBox cbDetalhado;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSlider jSlider1;
     private javax.swing.JSlider jSlider4;
     private javax.swing.JSlider jSlider5;
